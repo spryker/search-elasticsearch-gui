@@ -1,4 +1,4 @@
-{% extends '@Application/Layout/layout.twig' %}
+{% extends '@Gui/Layout/layout.twig' %}
 
 {% block body_class %}spy-page{% endblock %}
 
@@ -10,30 +10,28 @@
 {% block content %}
     {% embed '@Gui/Partials/widget.twig' with { widget_title: 'Search Document' } %}
         {% block widget_content %}
-            <div class="col-sm-12">
-                <div class="clearfix storage-key__title">
-                    <h1 class="pull-left">{{ documentId }}</h1>
+            <div class="row storage-key__title">
+                <h1 class="col-sm-12">{{ documentId }}</h1>
 
-                    <div class="pull-right">
-                        <button
-                            data-copy-target="document-json-raw"
-                            data-success-feedback-text="{{ 'Copied!' | trans }}"
-                            data-failed-feedback-text="{{ 'Failed to copy' | trans }}"
-                            class="btn btn-sm btn-default copy-button"
-                        >
-                            <span class="glyphicon glyphicon-copy" aria-hidden="true"></span> {{ 'Copy' | trans }}
-                        </button>
+                <div class="col-sm-auto">
+                    <button
+                        data-copy-target="document-json-raw"
+                        data-success-feedback-text="{{ 'Copied!' | trans }}"
+                        data-failed-feedback-text="{{ 'Failed to copy' | trans }}"
+                        class="btn btn-sm btn-default copy-button"
+                    >
+                        <span class="glyphicon glyphicon-copy" aria-hidden="true"></span> {{ 'Copy' | trans }}
+                    </button>
 
-                        <button
-                            data-download-target="document-json-raw"
-                            data-success-feedback-text="{{ 'Downloaded!' | trans }}"
-                            data-failed-feedback-text="{{ 'Failed to download' | trans }}"
-                            data-filename="{{ documentId }}.json"
-                            class="btn btn-sm btn-default download-button"
-                        >
-                            <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ 'Download' | trans }}
-                        </button>
-                    </div>
+                    <button
+                        data-download-target="document-json-raw"
+                        data-success-feedback-text="{{ 'Downloaded!' | trans }}"
+                        data-failed-feedback-text="{{ 'Failed to download' | trans }}"
+                        data-filename="{{ documentId }}.json"
+                        class="btn btn-sm btn-default download-button"
+                    >
+                        <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ 'Download' | trans }}
+                    </button>
                 </div>
             </div>
             <pre><code id="document-json-raw" class="json">{{ data | json_encode(constant('JSON_PRETTY_PRINT')) }}</code></pre>
