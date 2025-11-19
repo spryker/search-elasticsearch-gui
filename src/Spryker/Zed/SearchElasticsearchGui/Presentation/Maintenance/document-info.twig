@@ -10,10 +10,10 @@
 {% block content %}
     {% embed '@Gui/Partials/widget.twig' with { widget_title: 'Search Document' } %}
         {% block widget_content %}
-            <div class="row storage-key__title">
-                <h1 class="col-sm-12">{{ documentId }}</h1>
+            <div class="clearfix storage-key__title">
+                <h1 class="float-start">{{ documentId }}</h1>
 
-                <div class="col-sm-auto">
+                <div class="float-end">
                     <button
                         data-copy-target="document-json-raw"
                         data-success-feedback-text="{{ 'Copied!' | trans }}"
