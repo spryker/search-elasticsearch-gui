@@ -18,9 +18,9 @@
                         data-copy-target="document-json-raw"
                         data-success-feedback-text="{{ 'Copied!' | trans }}"
                         data-failed-feedback-text="{{ 'Failed to copy' | trans }}"
-                        class="btn btn-sm btn-default copy-button"
-                    >
-                        <span class="glyphicon glyphicon-copy" aria-hidden="true"></span> {{ 'Copy' | trans }}
+                        class="btn btn-sm btn-default copy-button">
+                            <span class="fa fa-clipboard" aria-hidden="true"></span>
+                            {{ 'Copy' | trans }}
                     </button>
 
                     <button
@@ -28,9 +28,9 @@
                         data-success-feedback-text="{{ 'Downloaded!' | trans }}"
                         data-failed-feedback-text="{{ 'Failed to download' | trans }}"
                         data-filename="{{ documentId }}.json"
-                        class="btn btn-sm btn-default download-button"
-                    >
-                        <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ 'Download' | trans }}
+                        class="btn btn-sm btn-default download-button">
+                            <span class="fa fa-download" aria-hidden="true"></span>
+                            {{ 'Download' | trans }}
                     </button>
                 </div>
             </div>
