@@ -27,9 +27,6 @@ class MaintenanceController extends AbstractController
      */
     public const URL_PARAM_DOCUMENT_ID = 'documentId';
 
-    /**
-     * @return array
-     */
     public function listIndexesAction(): array
     {
         $indexTable = $this->getFactory()->createIndexTable();
@@ -37,9 +34,6 @@ class MaintenanceController extends AbstractController
         return $this->viewResponse(['indexTable' => $indexTable->render()]);
     }
 
-    /**
-     * @return \Symfony\Component\HttpFoundation\JsonResponse
-     */
     public function listIndexesAjaxAction(): JsonResponse
     {
         $indexTable = $this->getFactory()->createIndexTable();
@@ -49,9 +43,6 @@ class MaintenanceController extends AbstractController
         );
     }
 
-    /**
-     * @return array
-     */
     public function listDocumentsAction(): array
     {
         $documentTable = $this->getFactory()->createDocumentTable();
@@ -59,9 +50,6 @@ class MaintenanceController extends AbstractController
         return $this->viewResponse(['documentTable' => $documentTable->render()]);
     }
 
-    /**
-     * @return \Symfony\Component\HttpFoundation\JsonResponse
-     */
     public function listDocumentsAjaxAction(): JsonResponse
     {
         $documentTable = $this->getFactory()->createDocumentTable();
@@ -71,11 +59,6 @@ class MaintenanceController extends AbstractController
         );
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return array
-     */
     public function documentInfoAction(Request $request): array
     {
         $documentId = $request->get(static::URL_PARAM_DOCUMENT_ID);

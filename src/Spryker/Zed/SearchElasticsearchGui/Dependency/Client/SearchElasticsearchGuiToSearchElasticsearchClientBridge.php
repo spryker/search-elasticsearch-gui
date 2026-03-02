@@ -37,11 +37,6 @@ class SearchElasticsearchGuiToSearchElasticsearchClientBridge implements SearchE
         return $this->searchElasticsearchClient->search($searchQuery, $resultFormatters, $requestParameters);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SearchDocumentTransfer $searchDocumentTransfer
-     *
-     * @return \Generated\Shared\Transfer\SearchDocumentTransfer
-     */
     public function readDocument(SearchDocumentTransfer $searchDocumentTransfer): SearchDocumentTransfer
     {
         return $this->searchElasticsearchClient->readDocument($searchDocumentTransfer);

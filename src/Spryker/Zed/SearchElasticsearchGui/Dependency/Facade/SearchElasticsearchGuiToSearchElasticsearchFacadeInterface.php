@@ -23,10 +23,5 @@ interface SearchElasticsearchGuiToSearchElasticsearchFacadeInterface
      */
     public function getIndexMetaData(ElasticsearchSearchContextTransfer $elasticsearchSearchContextTransfer): array;
 
-    /**
-     * @param \Generated\Shared\Transfer\ElasticsearchSearchContextTransfer $elasticsearchSearchContextTransfer
-     *
-     * @return int
-     */
     public function getDocumentsTotalCount(ElasticsearchSearchContextTransfer $elasticsearchSearchContextTransfer): int;
 }

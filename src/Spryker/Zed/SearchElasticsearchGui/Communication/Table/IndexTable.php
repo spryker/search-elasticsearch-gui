@@ -23,19 +23,11 @@ class IndexTable extends AbstractTable
      */
     protected $searchElasticsearchFacade;
 
-    /**
-     * @param \Spryker\Zed\SearchElasticsearchGui\Dependency\Facade\SearchElasticsearchGuiToSearchElasticsearchFacadeInterface $searchElasticsearchFacade
-     */
     public function __construct(SearchElasticsearchGuiToSearchElasticsearchFacadeInterface $searchElasticsearchFacade)
     {
         $this->searchElasticsearchFacade = $searchElasticsearchFacade;
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return \Spryker\Zed\Gui\Communication\Table\TableConfiguration
-     */
     protected function configure(TableConfiguration $config): TableConfiguration
     {
         $this->disableSearch();
@@ -54,11 +46,6 @@ class IndexTable extends AbstractTable
         return $config;
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return array
-     */
     protected function prepareData(TableConfiguration $config): array
     {
         $tableData = [];

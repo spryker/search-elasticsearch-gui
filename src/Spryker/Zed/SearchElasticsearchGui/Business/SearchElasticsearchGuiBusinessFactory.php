@@ -15,9 +15,6 @@ use Spryker\Zed\SearchElasticsearchGui\SearchElasticsearchGuiDependencyProvider;
 
 class SearchElasticsearchGuiBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\SearchElasticsearchGui\Business\DocumentReader\DocumentReaderInterface
-     */
     public function createDocumentReader(): DocumentReaderInterface
     {
         return new DocumentReader(
@@ -25,9 +22,6 @@ class SearchElasticsearchGuiBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\SearchElasticsearchGui\Dependency\Client\SearchElasticsearchGuiToSearchElasticsearchClientInterface
-     */
     public function getSearchElasticsearchClient(): SearchElasticsearchGuiToSearchElasticsearchClientInterface
     {
         return $this->getProvidedDependency(SearchElasticsearchGuiDependencyProvider::CLIENT_SEARCH_ELASTICSEARCH);

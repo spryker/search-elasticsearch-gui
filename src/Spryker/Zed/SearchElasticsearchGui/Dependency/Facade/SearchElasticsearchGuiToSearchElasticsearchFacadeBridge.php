@@ -42,11 +42,6 @@ class SearchElasticsearchGuiToSearchElasticsearchFacadeBridge implements SearchE
         return $this->searchElasticsearchFacade->getIndexMetaData($elasticsearchSearchContextTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ElasticsearchSearchContextTransfer $elasticsearchSearchContextTransfer
-     *
-     * @return int
-     */
     public function getDocumentsTotalCount(ElasticsearchSearchContextTransfer $elasticsearchSearchContextTransfer): int
     {
         return $this->searchElasticsearchFacade->getDocumentsTotalCount($elasticsearchSearchContextTransfer);

@@ -19,20 +19,11 @@ class DocumentReader implements DocumentReaderInterface
      */
     protected $searchElasticsearchClient;
 
-    /**
-     * @param \Spryker\Zed\SearchElasticsearchGui\Dependency\Client\SearchElasticsearchGuiToSearchElasticsearchClientInterface $searchElasticsearchClient
-     */
     public function __construct(SearchElasticsearchGuiToSearchElasticsearchClientInterface $searchElasticsearchClient)
     {
         $this->searchElasticsearchClient = $searchElasticsearchClient;
     }
 
-    /**
-     * @param string $documentId
-     * @param string $indexName
-     *
-     * @return \Generated\Shared\Transfer\SearchDocumentTransfer
-     */
     public function readDocument(string $documentId, string $indexName): SearchDocumentTransfer
     {
         $searchDocumentTransfer = $this->createSearchDocumentTransfer($documentId, $indexName);
@@ -40,12 +31,6 @@ class DocumentReader implements DocumentReaderInterface
         return $this->searchElasticsearchClient->readDocument($searchDocumentTransfer);
     }
 
-    /**
-     * @param string $documentId
-     * @param string $indexName
-     *
-     * @return \Generated\Shared\Transfer\SearchDocumentTransfer
-     */
     protected function createSearchDocumentTransfer(string $documentId, string $indexName): SearchDocumentTransfer
     {
         $elasticsearchContextTransfer = (new ElasticsearchSearchContextTransfer())->setIndexName($indexName);

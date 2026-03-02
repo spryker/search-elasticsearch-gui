@@ -83,11 +83,6 @@ class DocumentListQuery extends AbstractPlugin implements QueryInterface, Search
         $this->searchContextTransfer = $searchContextTransfer;
     }
 
-    /**
-     * @param string $searchString
-     *
-     * @return \Elastica\Query\BoolQuery
-     */
     protected function createFullTextSearchQuery(string $searchString): BoolQuery
     {
         $fields = ['_all'];
@@ -103,11 +98,6 @@ class DocumentListQuery extends AbstractPlugin implements QueryInterface, Search
         return $boolQuery;
     }
 
-    /**
-     * @param \Elastica\Query $baseQuery
-     *
-     * @return void
-     */
     protected function setQueryLimit(Query $baseQuery): void
     {
         $limit = $this->getLimitFromSearchContext();
@@ -117,11 +107,6 @@ class DocumentListQuery extends AbstractPlugin implements QueryInterface, Search
         }
     }
 
-    /**
-     * @param \Elastica\Query $baseQuery
-     *
-     * @return void
-     */
     protected function setQueryOffset(Query $baseQuery): void
     {
         $offset = $this->getOffsetFromSearchContext();
@@ -131,17 +116,11 @@ class DocumentListQuery extends AbstractPlugin implements QueryInterface, Search
         }
     }
 
-    /**
-     * @return bool
-     */
     protected function hasSearchContext(): bool
     {
         return (bool)$this->searchContextTransfer;
     }
 
-    /**
-     * @return string
-     */
     protected function getSearchStringFromSearchContext(): string
     {
         if (!$this->searchContextTransfer) {
@@ -155,9 +134,6 @@ class DocumentListQuery extends AbstractPlugin implements QueryInterface, Search
             ->getSearchString();
     }
 
-    /**
-     * @return int
-     */
     protected function getLimitFromSearchContext(): int
     {
         if (!$this->searchContextTransfer) {
@@ -171,9 +147,6 @@ class DocumentListQuery extends AbstractPlugin implements QueryInterface, Search
             ->getLimit();
     }
 
-    /**
-     * @return int
-     */
     protected function getOffsetFromSearchContext(): int
     {
         if (!$this->searchContextTransfer) {

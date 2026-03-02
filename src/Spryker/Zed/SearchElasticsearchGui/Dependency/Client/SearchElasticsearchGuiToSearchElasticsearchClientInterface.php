@@ -21,10 +21,5 @@ interface SearchElasticsearchGuiToSearchElasticsearchClientInterface
      */
     public function search(QueryInterface $searchQuery, array $resultFormatters = [], array $requestParameters = []);
 
-    /**
-     * @param \Generated\Shared\Transfer\SearchDocumentTransfer $searchDocumentTransfer
-     *
-     * @return \Generated\Shared\Transfer\SearchDocumentTransfer
-     */
     public function readDocument(SearchDocumentTransfer $searchDocumentTransfer): SearchDocumentTransfer;
 }

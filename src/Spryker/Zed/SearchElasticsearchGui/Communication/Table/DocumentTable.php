@@ -53,11 +53,6 @@ class DocumentTable extends AbstractTable
         $this->documentListQuery = $documentListQuery;
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return \Spryker\Zed\Gui\Communication\Table\TableConfiguration
-     */
     protected function configure(TableConfiguration $config): TableConfiguration
     {
         $this->configureDocumentListQuery();
@@ -82,11 +77,6 @@ class DocumentTable extends AbstractTable
         return $config;
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return array
-     */
     protected function prepareData(TableConfiguration $config): array
     {
         $tableData = [];
@@ -116,9 +106,6 @@ class DocumentTable extends AbstractTable
         return $tableData;
     }
 
-    /**
-     * @return void
-     */
     protected function configureDocumentListQuery(): void
     {
         $this->documentListQuery->setSearchContext(
@@ -126,9 +113,6 @@ class DocumentTable extends AbstractTable
         );
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\SearchContextTransfer
-     */
     protected function createSearchContextTransfer(): SearchContextTransfer
     {
         $elasticsearchContextTransfer = (new ElasticsearchSearchContextTransfer())
@@ -140,9 +124,6 @@ class DocumentTable extends AbstractTable
         return (new SearchContextTransfer())->setElasticsearchContext($elasticsearchContextTransfer);
     }
 
-    /**
-     * @return string|null
-     */
     protected function getIndexName(): ?string
     {
         $indexName = (string)$this->request->query->get(MaintenanceController::URL_PARAM_INDEX);
@@ -150,9 +131,6 @@ class DocumentTable extends AbstractTable
         return $indexName === '' ? null : $indexName;
     }
 
-    /**
-     * @return string|null
-     */
     protected function getSearchString(): ?string
     {
         return !$this->getSearchTerm() ?: $this->getSearchTerm()['value'];

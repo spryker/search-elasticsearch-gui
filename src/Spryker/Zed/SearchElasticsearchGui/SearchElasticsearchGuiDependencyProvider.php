@@ -24,11 +24,6 @@ class SearchElasticsearchGuiDependencyProvider extends AbstractBundleDependencyP
      */
     public const FACADE_SEARCH_ELASTICSEARCH = 'FACADE_SEARCH_ELASTICSEARCH';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideBusinessLayerDependencies(Container $container): Container
     {
         $container = $this->addSearchElasticsearchClient($container);
@@ -36,11 +31,6 @@ class SearchElasticsearchGuiDependencyProvider extends AbstractBundleDependencyP
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideCommunicationLayerDependencies(Container $container): Container
     {
         $container = $this->addSearchElasticsearchClient($container);
@@ -49,11 +39,6 @@ class SearchElasticsearchGuiDependencyProvider extends AbstractBundleDependencyP
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addSearchElasticsearchClient(Container $container): Container
     {
         $container->set(static::CLIENT_SEARCH_ELASTICSEARCH, function (Container $container) {
@@ -65,11 +50,6 @@ class SearchElasticsearchGuiDependencyProvider extends AbstractBundleDependencyP
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addSearchElasticsearchFacade(Container $container): Container
     {
         $container->set(static::FACADE_SEARCH_ELASTICSEARCH, function (Container $container) {
