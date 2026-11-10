@@ -94,9 +94,9 @@ class DocumentTable extends AbstractTable
             $tableData[] = [
                 static::COL_ID => sprintf(
                     '<a href="/search-elasticsearch-gui/maintenance/document-info?documentId=%s&index=%s">%s</a>',
-                    $result->getId(),
-                    $result->getIndex(),
-                    $result->getId(),
+                    urlencode((string)$result->getId()),
+                    urlencode((string)$result->getIndex()),
+                    htmlspecialchars((string)$result->getId(), ENT_QUOTES, 'UTF-8'),
                 ),
                 static::COL_INDEX => $result->getIndex(),
                 static::COL_SCORE => $result->getScore(),
